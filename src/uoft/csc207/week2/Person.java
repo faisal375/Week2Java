@@ -35,9 +35,14 @@ class Person {
      * @return the name formatted as a str.
      */
     String formatName() {
-        String formattedName = this.name[name.length - 1] + ",";
+        String formattedName = this.name[name.length - 1];
+
+        if (name.length > 1) {
+            formattedName += ",";
+        }
+
         for (int i = 0; i < name.length - 1; i++) {
-            formattedName += this.name[i];
+            formattedName += " " + this.name[i];
         }
 
         return formattedName;
